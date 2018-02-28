@@ -9,8 +9,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
+import ru.qa.addressbook.appmanager.ApplicationManager;
+import ru.qa.addressbook.tests.TestBase;
 
-public class ContactCreationTests {
+public class ContactCreationTests extends TestBase {
     FirefoxDriver wd;
     
     @BeforeMethod
@@ -66,11 +68,6 @@ public class ContactCreationTests {
     }
     
     public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
+        return ApplicationManager.isAlertPresent(wd);
     }
 }
