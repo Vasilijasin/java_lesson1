@@ -67,7 +67,6 @@ public class ContactCreationTests extends TestBase {
         wd.quit();
     }
     
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        return ApplicationManager.isAlertPresent(wd);
+
     }
-}
+
